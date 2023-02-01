@@ -21,7 +21,7 @@ def create_blog(request):
             blog = form.save(commit=False)
             blog.author = request.user
             blog.save()
-            return render(request, 'show_blog.html', {'title': 'Blog', 'blog': blog})
+            return redirect('show_my_blog')
 
     form = BlogCreationForm
     return render(request, 'create_blog.html', {'title': 'Create blog', 'form': form})
