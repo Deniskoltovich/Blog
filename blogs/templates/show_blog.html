@@ -28,6 +28,12 @@
   </div>
 </div>
 
+{% if is_owner %}
+<div>
+<a class="btn btn-primary" href="{% url 'create_post' %}" role="button">Create new post</a>
+</div>
+{% endif %}
+
     <div class="cols-1 row-cols-md-2 g-4">
 
 {% for post in posts %}

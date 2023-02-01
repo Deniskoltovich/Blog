@@ -20,14 +20,39 @@
                             aria-current="page"
                             href="{% url 'list_blogs' %}">Blogs</a>
                     </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                        <a class="nav-link active"
+                            aria-current="page"
+                            href="{% url 'create_blog' %}">Create blog</a>
+                    </li>
+                            <li class="nav-item">
+                        <a class="nav-link active"
+                            aria-current="page"
+                            href="{% url 'show_my_blog'%}">My blog</a>
+                    </li>
+                        {% endif %}
+                                <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Account
+                      </a>
+                      <ul class="dropdown-menu">
+                                                  {% if user.is_authenticated %}
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                                                    {% else %}
+                        <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                                                    {% endif %}
 
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'register' %}">Registration</a></li>
+                      </ul>
                     </ul>
                 </div>
                 </div>
             </nav>
 
             <div class="container-fluid">
-
+                {% csrf_token %}
                 {% block content %}
                 {% endblock %}
 
