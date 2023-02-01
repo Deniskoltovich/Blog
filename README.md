@@ -5,7 +5,7 @@ Django blog application
 In your command line:
 
 ```
-git@github.com:Deniskoltovich/Blog.git
+git clone https://github.com/Deniskoltovich/Blog.git
 cd Blog
 ```
 
