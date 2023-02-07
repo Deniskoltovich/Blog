@@ -11,3 +11,9 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_time']
+
+        indexes = [
+            models.Index(fields=['blog', ]),
+            models.Index(fields=['title', ]),
+            models.Index(fields=['content', ]),
+        ]

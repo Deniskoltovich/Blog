@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Blog, ModelChangeLogsModel
+from .models import Blog
 
 
 admin.site.register(Blog)
-admin.site.register(ModelChangeLogsModel)
